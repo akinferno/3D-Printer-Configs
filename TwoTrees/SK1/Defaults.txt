@@ -1,0 +1,5 @@
+Default config info
+
+Hostname: mkspi.lan
+Username: mks
+Password: makerbase
