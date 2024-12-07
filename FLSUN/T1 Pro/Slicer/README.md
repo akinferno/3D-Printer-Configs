@@ -5,48 +5,84 @@ Next to ‘FLSUN T1 0.4 nozzle’ printer, click the little ‘edit’ icon. Cli
 **Machine start G-code:**
 
 G21
+
 G90
+
 M82
+
 G28
+
 M140 S[first_layer_bed_temperature]
+
 M104 S150 T0
+
 M190 S[first_layer_bed_temperature]
+
 G1 Z150 F3000
+
 G1 X-130 Y0 Z0.4
+
 M104 S[first_layer_temperature] T0
+
 M109 S[first_layer_temperature] T0
+
 M107 T0
+
 G92 E0
+
 G3 X0 Y-130 I130 J0 Z0.3 E30 F2000
+
 G1 Z2 F2000
+
 G92 E0
+
 {if bottom_solid_infill_flow_ratio == 1}  ; if 1st layer flow ratio is 1 (default)
+
   M221 S{filament_flow_ratio[0] * 100}  ; Set flow ratio of the filament
+
 {else}
+
   M221 S{bottom_solid_infill_flow_ratio * 100} ; Or set flow to 1st layer flow ratio
+
 {endif}
+
 SET_TMC_CURRENT STEPPER=extruder CURRENT=0.8
  
 
 **Machine end G-code:**
 
 M107 T0
+
 M104 S0
+
 M104 S0 T1
+
 M140 S0
+
 M221 S100  ; Set flow ratio back to 100%
+
 G92 E0
+
 G91
+
 G1 E-2 F2100
+
 G1 Z+0.5 F6000
+
 G28
+
 G90
+
  
 
 **Layer change G-code:**
 
 {if layer_z < total_layer_count}  ; if layer is below top layer
+
   M221 S{filament_flow_ratio[0] * 100}  ; Set to filament flow ratio
+
 {elsif layer_z == total_layer_count and top_solid_infill_flow_ratio != 1}
+
   M221 S{top_solid_infill_flow_ratio * 100}  ; If top layer AND flow ratio is NOT 1, change flow rate.
+
 {endif}
