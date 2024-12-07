@@ -1,7 +1,7 @@
 **DISCLAIMER**: Use at your own risk. I know enough to not be afraid to tinker. And like tinkering so much, I don't mind breaking stuff and fixing it later. That said, I will not intentionally break stuff. All of my changes are commented in the files below, meaning followed by ';' and a comment.
 
 
-## **ORCASLICER CHANGES**
+# **ORCASLICER CHANGES**
 
 Changes:
 - Stopped hotend from heating first. I set it to initally heat to 150C while bed is heating up, then move to purge position, then heat to first layer hotend temp before purging.
@@ -11,7 +11,7 @@ Changes:
 Next to ‘FLSUN T1 0.4 nozzle’ printer, click the little ‘edit’ icon. Click the ‘Machine G-code’ tab.  Replace what is there with the following:
  
 
-# **Machine start G-code:**
+## **Machine start G-code:**
 ```
 G21
 G90
@@ -38,7 +38,7 @@ TIMELAPSE_TAKE_FRAME  ; Should start the timelapse, this has not been tested.
 SET_TMC_CURRENT STEPPER=extruder CURRENT=0.8
 ```
 
-# **Machine end G-code:**
+## **Machine end G-code:**
 ```
 M107 T0
 M104 S0
@@ -54,7 +54,7 @@ TIMELAPSE_RENDER   ; Should finalize the timelapse file, also not tested
 ```
  
 
-# **Layer change G-code:**
+## **Layer change G-code:**
 ```
 {if layer_z < total_layer_count}  ; if layer is below top layer
   M221 S{filament_flow_ratio[0] * 100}  ; Set to filament flow ratio
