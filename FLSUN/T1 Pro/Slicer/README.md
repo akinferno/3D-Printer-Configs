@@ -3,7 +3,6 @@
 
 # **ORCASLICER CHANGES**
 
-Changes:
 - Stopped hotend from heating first. I set it to initally heat to 150C while bed is heating up, then move to purge position, then heat to first layer hotend temp before purging.
 - Orca has a setting for top and bottom layer flow. It defaults to '1' in the print settings. This annoys me, so I evaluate to see if it is 1, if so, I use the filament flow rate. If it is not '1', I use the custom value for flow.
 - I included this on the layer changes also. If not the last layer, extrusion rate is set to filament flow rate. If it is the last layer and top layer flow dows not equal 1, it uses the custom value, otherwise it uses the filament flow rate. 
