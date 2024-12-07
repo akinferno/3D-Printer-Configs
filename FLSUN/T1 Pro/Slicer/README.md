@@ -1,7 +1,11 @@
 **DISCLAIMER**: Use at your own risk. I know enough to not be afraid to tinker. And like tinkering so much, I don't mind breaking stuff and fixing it later. That said, I will not intentionally break stuff.
+
+
+**ORCASLICER CHANGES**
+
 Next to ‘FLSUN T1 0.4 nozzle’ printer, click the little ‘edit’ icon. Click the ‘Machine G-code’ tab.  Replace what is there with the following:
  
-**ORCASLICER CHANGES**
+
 **Machine start G-code:**
 
 G21
