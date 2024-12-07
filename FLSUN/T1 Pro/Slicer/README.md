@@ -45,6 +45,7 @@ G1 E-2 F2100
 G1 Z+0.5 F6000
 G28
 G90
+TIMELAPSE_RENDER
 ```
  
 
@@ -55,4 +56,5 @@ G90
 {elsif layer_z == total_layer_count and top_solid_infill_flow_ratio != 1}
   M221 S{top_solid_infill_flow_ratio * 100}  ; If top layer AND flow ratio is NOT 1, change flow rate.
 {endif}
+TIMELAPSE_TAKE_FRAME
 ```
