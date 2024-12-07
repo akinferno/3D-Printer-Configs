@@ -56,5 +56,5 @@ TIMELAPSE_RENDER   ; Should finalize the timelapse file, also not tested
 {elsif layer_z == total_layer_count and top_solid_infill_flow_ratio != 1}
   M221 S{top_solid_infill_flow_ratio * 100}  ; If top layer AND flow ratio is NOT 1, change flow rate.
 {endif}
-TIMELAPSE_TAKE_FRAME ; Should start the timelapse, this has not been tested.
+TIMELAPSE_TAKE_FRAME ; Should take a new picture for the timelapse, this has not been tested.
 ```
