@@ -28,7 +28,7 @@ G92 E0
 G3 X0 Y-130 I130 J0 Z0.3 E30 F2000
 G1 Z2 F2000
 G92 E0
-TIMELAPSE_TAKE_FRAME  ; Should start the timelapse, this has not been tested.
+; TIMELAPSE_TAKE_FRAME  ; This doesn't work, I left it here, commented out until I figure out the proper command.
 SET_TMC_CURRENT STEPPER=extruder CURRENT=0.8
 ```
 
@@ -50,5 +50,5 @@ TIMELAPSE_RENDER   ; Should finalize the timelapse file, also not tested
 
 ## **Layer change G-code:**
 ```
-TIMELAPSE_TAKE_FRAME ; Should take a new picture for the timelapse, this has not been tested.
+;TIMELAPSE_TAKE_FRAME ; This doesn't work, I left it here, commented out until I figure out the proper command.
 ```
