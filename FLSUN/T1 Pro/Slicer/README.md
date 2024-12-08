@@ -28,11 +28,6 @@ G92 E0
 G3 X0 Y-130 I130 J0 Z0.3 E30 F2000
 G1 Z2 F2000
 G92 E0
-{if bottom_solid_infill_flow_ratio == 1}  ; if 1st layer flow ratio is 1 (default)
-  M221 S{filament_flow_ratio[0] * 100}  ; Set flow ratio of the filament
-{else}
-  M221 S{bottom_solid_infill_flow_ratio * 100} ; Or set flow to 1st layer flow ratio
-{endif}
 TIMELAPSE_TAKE_FRAME  ; Should start the timelapse, this has not been tested.
 SET_TMC_CURRENT STEPPER=extruder CURRENT=0.8
 ```
@@ -55,10 +50,5 @@ TIMELAPSE_RENDER   ; Should finalize the timelapse file, also not tested
 
 ## **Layer change G-code:**
 ```
-{if layer_z < total_layer_count}  ; if layer is below top layer
-  M221 S{filament_flow_ratio[0] * 100}  ; Set to filament flow ratio
-{elsif layer_z == total_layer_count and top_solid_infill_flow_ratio != 1}
-  M221 S{top_solid_infill_flow_ratio * 100}  ; If top layer AND flow ratio is NOT 1, change flow rate.
-{endif}
 TIMELAPSE_TAKE_FRAME ; Should take a new picture for the timelapse, this has not been tested.
 ```
