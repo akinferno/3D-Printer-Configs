@@ -9,7 +9,7 @@ Config changes so far:
 - Updated Unload_Matrial macro
 - Added KAMP files (Klipper Adaptive Mesh and Purge)
 - Customized the Print_Start (sortof, had to create a whole new macro My_Print_Start instead because Print_Start would run twicefor some reason)
-  -- Be aware: this won't won't unless you update the Sliecr gcode with the commands commented out above the My_Print_Start
+  -- Be aware: this won't work unless you update the Slicer gcode with the commands commented out above the My_Print_Start
 
 Hardware changes so far:
 - Removed rear toolhead cover along with rear toolhead fan.
