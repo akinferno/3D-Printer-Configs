@@ -4,9 +4,9 @@ https://github.com/ArmoredTurtle/AFC-Klipper-Add-On
 **Installation**
 To install this plugin, you should have the following pre-requisites installed:
 
--Klipper
+--Klipper
 
--Moonraker
+--Moonraker
 
 -WebUI (Mainsail or Fluidd)
 
